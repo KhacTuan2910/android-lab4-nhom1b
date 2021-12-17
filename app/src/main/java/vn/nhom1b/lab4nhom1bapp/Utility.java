@@ -38,14 +38,23 @@ public class Utility {
 
 
             Intent notificationIntent=new Intent(mContext,MainActivity.class);
-            PendingIntent contentIntent=PendingIntent.getActivity(mContext,0,notificationIntent,0)   ;
+//            PendingIntent contentIntent =PendingIntent.getActivity(mContext,0,notificationIntent,0)   ;
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+//            contentIntent = PendingIntent.getActivity
+//                    (this, 0, notificationIntent, PendingIntent.FLAG_MUTABLE);
+//        }
+//        else
+//        {
+//            contentIntent = PendingIntent.getActivity
+//                    (this, 0, notificationIntent, PendingIntent.FLAG_ONE_SHOT);
+//        }
 
             NotificationCompat.Builder builder=new NotificationCompat.Builder(mContext,CHANNEL_ID )
                     .setSmallIcon(R.drawable.ic_baseline_star_24)
                     .setContentTitle("I Wanna Wish You A Merry Christmas- V.Ar")
                     .setContentText("Lab 4_nhom1b")
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                    .setContentIntent(contentIntent)
+//                    .setContentIntent(contentIntent)
                     .setAutoCancel(false);
 
             mNotificationManager.notify(NOTIFICATION_ID,builder.build());

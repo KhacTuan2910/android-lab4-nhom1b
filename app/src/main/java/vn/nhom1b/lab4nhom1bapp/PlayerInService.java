@@ -178,7 +178,7 @@ public class PlayerInService extends Service implements View.OnClickListener, Me
 
 
     public void playSong() {
-        Utility.initNotification("Playing (Intentions).... ", this);
+        Utility.initNotification("Playing (...).... ", this);
         try {
             mp.reset();
             Uri myUri = Uri.parse("android.resource://" + this.getPackageName() + "/" + R.raw.wewanna);
